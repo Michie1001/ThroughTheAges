@@ -17,7 +17,7 @@ public class ToPortalScreen : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(screenToLoad);
+            SceneManager.LoadScene(0);
         }
     }
 }
