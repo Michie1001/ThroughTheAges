@@ -1,23 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using System.Diagnostics;
+using UnityEngine.UI;
+using TMPro;
 
 public class ToPortalScreen : MonoBehaviour
 {
-    private int screenToLoad;
+    public GameObject TimelineSelector;
 
-    // Start is called before the first frame update
-    private void Start()
+    void Start()
     {
-        screenToLoad = SceneManager.GetActiveScene().buildIndex - 1;
+        TimelineSelector.SetActive(false);
     }
 
-    private void OnTriggerEnter(Collider col)
+    void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(0);
+            // var TimelineSelector = GameObject.FindGameObjectWithTag("Timeline");
+            TimelineSelector.SetActive(true);
         }
+    }
+    void OnTriggerExit()
+    {
+        TimelineSelector.SetActive(false);
     }
 }

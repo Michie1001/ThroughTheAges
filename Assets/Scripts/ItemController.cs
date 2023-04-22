@@ -4,7 +4,21 @@ using UnityEngine;
 
 public class ItemController : MonoBehaviour
 {
+    //public static ItemController Instance;
     public Item Item;
+
+    //private void Awake()
+    //{
+      //  if (Instance == null)
+        //{
+          //  Instance = this;
+            //DontDestroyOnLoad(gameObject);
+        //}
+        //else
+        //{
+          //  Destroy(gameObject);
+        //}
+    //}
     
     //public static GameObject thisItem;
 

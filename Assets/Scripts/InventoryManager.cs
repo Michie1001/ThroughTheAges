@@ -4,6 +4,7 @@ using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Diagnostics;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -48,11 +49,16 @@ public class InventoryManager : MonoBehaviour
             GameObject obj = Instantiate(InventoryItem, ItemContent);
             var itemName = obj.transform.Find("ItemName").GetComponent<TextMeshProUGUI>();
             var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
-
+            
             itemName.text = item.itemName;
             itemIcon.sprite = item.icon;
 
+            //Debug.Log(item.id);
 
+            if(item.id == 1)
+            {
+                UnityEngine.Debug.Log("You have found a sword!");
+            }
         }
     }
 }

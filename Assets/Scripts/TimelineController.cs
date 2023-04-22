@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class TimelineController : MonoBehaviour
 {
-    private int timeline = 0;
+    private int timeline = 0; 
 
     public void Yamato()
     {
