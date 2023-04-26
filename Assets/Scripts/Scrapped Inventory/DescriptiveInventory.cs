@@ -10,7 +10,15 @@ public class DescriptiveInventory : MonoBehaviour
     [SerializeField]
     private RectTransform contentPanel;
 
+    [SerializeField]
+    private DescriptiveInventoryItemDescription itemDescription;
+
     List<DescriptiveInventoryItem> listOfItems = new List<DescriptiveInventoryItem>();
+
+    private void Awake()
+    {
+        Hide();
+    }
 
     public void InitializeInventoryUI(int inventorySize)
     {
@@ -20,12 +28,19 @@ public class DescriptiveInventory : MonoBehaviour
             uiItem.transform.SetParent(contentPanel);
             uiItem.transform.localScale = new Vector3(1, 1, 1);
             listOfItems.Add(uiItem);
+            uiItem.OnItemClicked += HandleItemSelection;
         }
+    }
+
+    private void HandleItemSelection(DescriptiveInventoryItem obj)
+    {
+        throw new KeyNotFoundException();
     }
 
     public void Show()
     {
         gameObject.SetActive(true);
+        itemDescription.ResetDescription();
     }
 
     public void Hide()
